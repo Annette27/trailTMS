@@ -1,0 +1,59 @@
+<div class="card" style="background-color: rgb(204, 231, 222); height: 100vh;">
+    <div class="card-header" style="text-align: center;font-size: 20px; font-weight: 500; padding: 20px;border:1px solid black ;">
+        List of New Applicants
+ 
+     </div>
+<div class="card-body" style="border: 1px solid black;" >
+    <div class="table-responsive" >
+        <table class="table" >
+            <thead>
+                <tr>
+                    <th>
+                        <button class="btn btn-primary"
+                        (click)="toggle()">{{showImage? 'Hide':'Show'}} Photo</button>
+                    </th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Highest Qualification</th>
+                    <th>Skill Set</th>
+                    <th>Company Name</th>
+                    <th>Designation</th>
+                    <th>Course</th>
+                    <th>Employment Type</th>
+
+
+                </tr>
+            </thead>
+                <tbody>
+                    <tr *ngFor='let i of applications'>
+                        <td><img *ngIf='showImage' [src]='i.imagepath' [style.width.px]='imagewidth' [style.height.px]='imageheight' [style.margin.px]='imagemargin'></td>
+                        <!-- Interpolation -->
+                        <td >{{i.name}}</td>
+                         <td >{{i.address}}</td>
+                         <td>{{i.highestQualification}}</td>
+                         <td>{{i.skillSet}}</td>
+                         <td>{{i.companyName}}</td>
+                         <td>{{i.designation}}</td>
+                         <td>{{i.course}}</td>
+                         <td> <select type="type" name="type" class="form-control" id="type" [(ngModel)]="i.type" required >
+                          <option value="Internal">Internal</option>
+                          <option value="Empanelled">Empanelled</option>
+                          <option value="External">External</option>
+                      </select> </td>
+                      <td><button class = "btn btn-success" (click)="approve(i)"   style="margin-left: 20px;">APPROVE</button></td>
+                      <td><button class = "btn btn-danger" (click)="deleteApp(i)" style="margin-left: 20px;">DELETE</button></td>
+                      <!-- <td><button class = "btn btn-warning" (click)="editProduct(i)" *ngIf='auth.loggedIn()'  style="margin-left: 20px;">EDIT</button></td>
+                         <td><button class = "btn btn-warning" (click)="deleteProduct(i)" *ngIf='auth.loggedIn()' style="margin-left: 20px;">DELETE</button></td> -->
+
+                    </tr>
+                </tbody>
+         
+</table>
+       
+
+    </div>
+
+</div>
+</div>
+
+              

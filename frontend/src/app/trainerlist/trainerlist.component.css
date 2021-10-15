@@ -1,0 +1,28 @@
+
+
+.e-grid .e-gridheader {
+    border:2px solid green
+}
+.e-grid .e-column {
+    border:2px solid rgb(3, 3, 3)
+}
+
+
+.e-grid .e-headercelldiv {
+    font-size: 30px;
+ }
+ .e-grid  {
+    border:2px solid rgb(3, 3, 3)
+ }
+ .trial{
+     color: rgb(31, 29, 29);
+     font-size: 25px;
+     font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+     padding: 20px;
+ }
+
+
+ 
+
+

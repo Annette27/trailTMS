@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+.trial{
+    background-color: rgba(212, 212, 212, 0.678);
+    /* margin-left: 30%; */
+    border-radius: 10px;
+    margin: 50px;
+}
+.body{
+    /* border: 1px solid black
+    ; */
+    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/01/29/242075/83fe134438e448676c60f7c663842a39.jpg');
+      
+}
+.space{
+  height: 70px;
+}

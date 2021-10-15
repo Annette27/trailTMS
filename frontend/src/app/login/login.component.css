@@ -1,0 +1,12 @@
+.body{
+    /* border: 1px solid black
+    ; */
+    background-image: url('https://www.wallpaperup.com/uploads/wallpapers/2014/01/29/242075/83fe134438e448676c60f7c663842a39.jpg');
+      height: 100vh;
+}
+.trial{
+    background-color: rgba(212, 212, 212, 0.678);
+    /* margin-left: 30%; */
+    border-radius: 10px;
+    padding: 50px;
+}

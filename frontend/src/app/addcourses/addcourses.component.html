@@ -1,0 +1,113 @@
+<div class="body" style="background-color: rgb(20, 20, 44);">
+    <div class="container" style="padding: 20px;">
+    
+    <div class="row">
+        <div class="col-lg-1"></div>
+    <div class="col-lg-5">
+    <div class="card" style="background-color: rgb(204, 231, 222); height: 100vh;width: 100%;">
+        <div class="card-header" style="text-align: center;font-size: 20px; font-weight: 500; padding: 20px;border:1px solid black ;">
+           Courses
+    
+        </div>
+    <div class="card-body" style="border: 1px solid black;" >
+        <div class="table-responsive" >
+            <table class="table" >
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Course ID</th>
+    
+                        <th>Batch</th>
+                      
+    
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr *ngFor='let i of batches'>
+                                                   <!-- Interpolation -->
+                            <td >{{i.course}}</td>
+                            <td >{{i.courseid}}</td>
+    
+                            <td >{{i.name}}</td>
+    
+                           <!-- <td><button class = "btn btn-success"  style="margin-left: 20px;">EDIT</button></td> -->
+                          <td><button class = "btn btn-danger" (click)="deleteCourse(i)" style="margin-left: 20px;">DELETE</button></td>
+                          <!-- <td><button class = "btn btn-warning" (click)="editProduct(i)" *ngIf='auth.loggedIn()'  style="margin-left: 20px;">EDIT</button></td>
+                             <td><button class = "btn btn-warning" (click)="deleteProduct(i)" *ngIf='auth.loggedIn()' style="margin-left: 20px;">DELETE</button></td> -->
+    
+                        </tr>
+                    </tbody>
+             
+    </table>
+           
+    
+        </div>
+    
+    </div>
+    </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="col-lg-1"></div>
+    
+       
+    <!-- add course -->
+    <form [formGroup]="courseForm" (ngSubmit)="newCourse()" >
+         
+           
+        <br>
+           <h2 style="text-align: center;color: white;" >Add Course</h2><br>
+         
+            
+             <div   style="margin:0% 5% 0% 10%;" class="form-group">
+             <label style="font-family: 'Merriweather', serif; font-size:15px;color: white;" for="course" >Course</label>
+             <input type="text" id="course" class="form-control" name="course"  [(ngModel)]="batch.course" formControlName="course"  >
+             <!-- <fa-icon [icon]="faMapMarkerAlt" style="position: relative;
+             top: -30px;  right: 30px;"></fa-icon> -->
+             <div *ngIf="(f.course.touched||f.course.dirty) && f.course.errors"> 
+                <small class="text-danger" *ngIf="f.course.errors.required"  >course required</small>
+     
+             </div>
+             <small class="text-danger" *ngIf="f.course.dirty && f.course.hasError('whitespace')"  >Enter valid course</small>
+     
+           </div>
+           <div   style="margin:0% 5% 0% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px;color: white;" for="courseid" >Course ID</label>
+            <input type="text" id="courseid" class="form-control" name="courseid"  [(ngModel)]="batch.courseid" formControlName="courseid"  >
+            <!-- <fa-icon [icon]="faMapMarkerAlt" style="position: relative;
+            top: -30px;  right: 30px;"></fa-icon> -->
+            <div *ngIf="(f.courseid.touched||f.courseid.dirty) && f.courseid.errors"> 
+               <small class="text-danger" *ngIf="f.courseid.errors.required"  >course id required</small>
+    
+            </div>
+            <small class="text-danger" *ngIf="f.courseid.dirty && f.courseid.hasError('whitespace')"  >Enter valid course id</small>
+    
+          </div>
+           
+           <div    style="margin:0% 5% 0% 10%;" class="form-group">
+             <label style="font-family: 'Merriweather', serif; font-size:15px;color: white;" for="batch" >Batch</label>
+             <input type="text" id="batch" class="form-control" name="batch"  [(ngModel)]="batch.name" formControlName="batch"  >
+             <!-- <fa-icon [icon]="faUserGraduate" style="position: relative;
+             top: -30px; left: 10px;"></fa-icon> -->
+             <div *ngIf="(f.batch.touched||f.batch.dirty) && f.batch.errors"> 
+             <small class="text-danger" *ngIf="f.batch.errors.required"  > require field</small>
+     
+             </div>
+             <small class="text-danger" *ngIf="f.batch.dirty && f.batch.hasError('whitespace')"  >Enter valid details</small>
+     
+           </div>
+                  
+           
+            
+            <div  style="padding-left: 45%; padding-top: 5%;">
+             <button id="btn1" [disabled]="courseForm.invalid" class="btn btn-primary">Add</button>
+     
+            </div>
+         
+           <br>
+         
+           
+       </form>
+    </div>
+    </div>
+    </div>
+    </div>

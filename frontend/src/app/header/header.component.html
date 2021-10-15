@@ -1,0 +1,17 @@
+<div class="header">
+    <img class="logo" style="height: 80px; width: 80px;" src="https://ictkerala.org/wp-content/uploads/2019/01/cropped-ict-ico.png" alt="logo">
+    <a href="#default" class="logo trial" style="font-family: 'Exo', sans-serif;">TRAINER MANAGEMENT SYSTEM</a>
+    <div class="header-right hoverstyle">
+        <a  *ngIf='!authservice.loggedin()||!authservice.loggedUser()' routerLink='/'>Home</a>
+        <a *ngIf='!(authservice.loggedin()||authservice.loggedUser())' routerLink='login'>Login</a>
+        <a   *ngIf='!(authservice.loggedin()||authservice.loggedUser())' routerLink='signup'>Signup</a>
+        <a  *ngIf='authservice.loggedin()' routerLink='approve'>New Enrollment Application</a>
+        <a  *ngIf='authservice.loggedin()' routerLink='trainers'>Trainers List</a>
+        <a  *ngIf='authservice.loggedin()' routerLink='courses'>Add Courses</a>
+
+           <a *ngIf='authservice.loggedin()||authservice.loggedUser()' routerLink='logout' (click)='logOut()'>Log Out</a>
+
+
+
+    </div>
+  </div>

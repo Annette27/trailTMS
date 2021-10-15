@@ -1,0 +1,193 @@
+
+  <div class="body">
+       <div class="container" >
+    <div class="row box"  >
+      <div class=" col-lg-3" ></div>
+      <div   class="trial col-lg-6" style="border: 1px solid black;" >
+    <form [formGroup]="registerForm" (ngSubmit)="newSignup()" >
+     
+       
+       <br>
+          <h2 style="text-align: center;" >Enrollment Form</h2><br>
+          <!-- <div style="margin:0% 10% 5% 10%;" class="form-group">
+           
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="id" >ID {{trainer.id}}</label>
+        </div> -->
+          <div  style="margin:0% 5% 0% 10%;" class="form-group">
+              <label style="font-family: 'Merriweather', serif; font-size:15px" for="name" >Name</label>
+              <input type="text" id="name" class="form-control" name="name"  [(ngModel)]="trainer.name" formControlName="name"  >
+              <fa-icon [icon]="faUserAlt" style="position: relative;
+            top: -33px; right: 30px;"></fa-icon>
+              <div *ngIf="(f.name.touched||f.name.dirty) && f.name.errors"> 
+                  <small class="text-danger" *ngIf="f.name.errors.minlength"  >Name should have atleast 3 letters</small>
+              <small class="text-danger" *ngIf="f.name.errors.required"  >name required</small>
+    
+              </div>
+              <small class="text-danger" *ngIf="f.name.dirty && f.name.hasError('whitespace')"  >Enter valid name</small>
+    
+            </div>
+          <div  style="margin:0% 5% 0% 10%;" class="form-group">
+            <label  style="font-family: 'Merriweather', serif; font-size:15px" for="email" >Email address</label>
+            <input type="email" id="email" class="form-control"  [(ngModel)]="trainer.email" formControlName="email" >
+            <fa-icon [icon]="faEnvelope" style="position: relative;
+            top: -33px; right: 30px;"></fa-icon>
+            <div *ngIf="(f.email.touched||f.email.dirty) && f.email.errors"> 
+              <small class="text-danger" *ngIf="f.email.errors.pattern"  >Enter valid email</small>
+              <small class="text-danger" *ngIf="f.email.errors.required"  >email required</small>
+    
+          </div>
+          </div>
+          <div   style="margin:0% 5% 0% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="name" >Phone Number</label>
+            <input type="text" id="phone" class="form-control" name="phone"  [(ngModel)]="trainer.phone" formControlName="phone"  >
+            <fa-icon [icon]="faPhone" style="position: relative;
+            top: -30px;  right: 30px;"></fa-icon>
+            <div *ngIf="(f.phone.touched||f.phone.dirty) && f.phone.errors"> 
+                <small class="text-danger" *ngIf="f.phone.errors.minlength"  >Number should have 10 digits </small>
+            <small class="text-danger" *ngIf="f.phone.errors.required"  >Phone Number is required</small>
+            <small class="text-danger" *ngIf="f.phone.errors.pattern"  >Enter correct format</small>
+             
+            </div>
+          </div>
+          <div   style="margin:0% 5% 0% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="address" >Address</label>
+            <input type="text" id="address" class="form-control" name="address"  [(ngModel)]="trainer.address" formControlName="address"  >
+            <fa-icon [icon]="faMapMarkerAlt" style="position: relative;
+            top: -30px;  right: 30px;"></fa-icon>
+            <div *ngIf="(f.address.touched||f.address.dirty) && f.address.errors"> 
+               <small class="text-danger" *ngIf="f.address.errors.required"  >Address is required</small>
+    
+            </div>
+            <small class="text-danger" *ngIf="f.address.dirty && f.address.hasError('whitespace')"  >Enter valid address</small>
+    
+          </div>
+          <div   style="margin:0% 5% 5% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="name" >Highest Qualification</label>
+            <input type="text" id="highestQualification" class="form-control" name="highestQualification"  [(ngModel)]="trainer.highestQualification" formControlName="highestQualification"  >
+            <!-- <fa-icon [icon]="faUserGraduate" style="position: relative;
+            top: -30px; left: 10px;"></fa-icon> -->
+            <div *ngIf="(f.highestQualification.touched||f.highestQualification.dirty) && f.highestQualification.errors"> 
+            <small class="text-danger" *ngIf="f.highestQualification.errors.required"  > require field</small>
+    
+            </div>
+            <small class="text-danger" *ngIf="f.highestQualification.dirty && f.highestQualification.hasError('whitespace')"  >Enter valid details</small>
+    
+          </div>
+         
+          <div  style="margin:0% 5% 5% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="name" >Skill Set</label>
+            <input type="skillSet" id="skillSet" class="form-control" name="skillSet" [(ngModel)]="trainer.skillSet" formControlName="skillSet"  >
+            <div *ngIf="(f.skillSet.touched||f.skillSet.dirty) && f.skillSet.errors"> 
+            <small class="text-danger" *ngIf="f.skillSet.errors.required"  >Skill Set is required</small>
+    
+            </div>
+            <small class="text-danger" *ngIf="f.skillSet.dirty && f.skillSet.hasError('whitespace')"  >Enter valid details</small>
+    
+          </div>
+          <div   style="margin:0% 5% 5% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="companyName" >Current Company Name</label>
+            <input type="companyName" id="companyName" class="form-control" name="companyName" [(ngModel)]="trainer.companyName"  formControlName="companyName"  >
+            <div *ngIf="(f.companyName.touched||f.companyName.dirty) && f.companyName.errors"> 
+            <small class="text-danger" *ngIf="f.companyName.errors.required"  >required field</small>
+    
+            </div>
+            <small class="text-danger" *ngIf="f.companyName.dirty && f.companyName.hasError('whitespace')"  >Enter valid details</small>
+    
+          </div>
+          <div   style="margin:0% 5% 5% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="designation" >Designation</label>
+            <input type="designation" id="designation" class="form-control" name="designation" [(ngModel)]="trainer.designation" formControlName="designation"  >
+            <div *ngIf="(f.designation.touched||f.designation.dirty) && f.designation.errors"> 
+            <small class="text-danger" *ngIf="f.designation.errors.required"  >required field</small>
+    
+            </div>
+            <small class="text-danger" *ngIf="f.designation.dirty && f.designation.hasError('whitespace')"  >Enter valid details</small>
+    
+          </div>
+          <div   style="margin:0% 5% 5% 10%;" class="form-group">
+            <label style="font-family: 'Merriweather', serif; font-size:15px" for="course" >ICTAK Course Handling</label>
+            <select type="course" name="course" class="form-control" id="course" formControlName="course" [(ngModel)]="trainer.course" required >
+              <option value="" >Select course</option>
+               
+              <option *ngFor="let i of courses" value={{i.name}}>{{i.name}}</option>
+            </select>
+            <div *ngIf="(f.course.touched||f.course.dirty) && f.course.errors"> 
+            <small class="text-danger" *ngIf="f.course.errors.required"  >Select course</small>
+    
+            </div>
+          </div>
+          
+    
+          <div   style="margin:0% 5% 10% 10%;"class="form-group">
+            <label  style="font-family: 'Merriweather', serif; font-size:15px"for="image" >Image</label>
+                        <input type="file"  class="form-control" (change)="submitImage($event)" formControlName="image" accept="image/*" required>
+                        <!-- <small *ngIf="url === undefined">Upload an image to see the preview</small> -->
+                        <img src={{url}} class="img-fluid rounded float-start border border-dark" alt="" style="width: 100px; height: 100px; margin-top: 5%;">
+            </div>
+       <br>
+       <br>
+       <br>
+                 
+            <div   style="margin:0% 5% 0% 10%;" class="form-group ">
+                <label style="font-family: 'Merriweather', serif; font-size:15px" for="password" >Password</label>
+                <input type="password" id="password" class="form-control" name="password"  [(ngModel)]="trainer.password"  formControlName="password"  >
+                <fa-icon [icon]="faKey" style="position: relative;
+                top: -30px; right: 30px;"></fa-icon>
+                <div *ngIf="(f.password.touched||f.password.dirty) "> 
+                    <ul style="list-style: none;">
+                      <li >
+                    <small class="text-danger" *ngIf="f.password.errors && f.password.errors.required"  >Password required</small>
+          
+                      </li>
+                      <li>
+                        <small class="text-danger"*ngIf=" f.password.errors && f.password.errors.passwordStrength"  >Password should contain atleast one special charachter,Upper case ,lower case ,number and splecial charachter</small>
+          
+                      </li>
+                      <li>
+                    <small class="text-danger" *ngIf=" f.password.errors && f.password.errors.minlength"  >Minimum length is 8 </small>
+          
+                      </li>
+                    </ul>
+                    
+                </div>
+              </div> 
+    
+              <div   style="margin:0% 5% 0% 10%;"class="form-group">
+                <label style="font-family: 'Merriweather', serif; font-size:15px" for="password1" >Password</label>
+                <input type="password" id="password1" class="form-control" name="password1"  formControlName="password1" required >
+                <div *ngIf="(f.password1.touched||f.password1.dirty)&& f.password1.errors "> 
+                    <ul style="list-style: none;">
+                      <li >
+                    <small class="text-danger" *ngIf="f.password1.errors.required"  >Password required</small>
+          
+                      </li>
+                      <li>
+                        <small class="text-danger"*ngIf=" f.password1.errors.MustMatch"  >Password mismatch</small>
+          
+                      </li>
+                     </ul>
+                    
+                </div>
+              </div> 
+           
+          
+           
+           <div style="text-align: center;padding-top: 15px;">
+            <button id="btn1" [disabled]="registerForm.invalid" class="btn btn-primary">Submit</button>
+    
+           </div>
+        
+          <br>
+        
+          
+      </form>
+    </div>
+      <div class="col-lg-3" ></div>
+    
+    
+    </div>
+    
+    
+    </div>
+      
+    </div>

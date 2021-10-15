@@ -1,0 +1,47 @@
+<div class="body" style="align-content: center;">
+
+
+    <div class="container">
+        <div class="row" style="height: 70px;"></div>
+
+
+        <div class="row">
+            <div class=" col-lg-4" ></div>
+            <div class=" col-lg-4"  >
+  
+    
+    <div class="trial "  style="border: 1px solid black;">
+        <div style="text-align: center;" >
+
+            <h3>Login</h3>
+          
+                
+        </div>
+    <form class="form " #userlogin="ngForm"  (ngSubmit)="userVerify()">
+    
+        <div class="form-group">
+    
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="username" [(ngModel)]="user.uname" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    
+        </div>
+    <br>
+    
+    <div class="form-group">
+      
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="user.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}"  required>
+     
+    </div>
+    
+    <br>
+    <div style="text-align: center;">
+    <button class="btn btn-primary" [disabled]="userlogin.form.invalid">Login</button>
+</div>
+    </form>
+    
+    </div>
+</div>
+</div>
+</div>
+</div>
